@@ -1,4 +1,13 @@
 @include reset;
+
+%text {
+    font-size: .9rem;
+    line-height: 1.7em;
+}
+%titles {
+    margin-top: 0;
+    text-transform: uppercase;
+}
 /**
 contaiber
 **/
@@ -20,3 +29,33 @@ aside{
 footer{
     grid-area: footer;
 }
+
+/**  main section**/
+ .main{
+    padding: $layout-padding * 2.5;
+    & > p{
+        font-size: 1.5em;
+        margin: 0;
+        margin-bottom: 1.5em;
+    }
+}
+
+
+
+.card {
+    @extend %text;
+    padding: 2em;
+    margin-right: .5em;
+    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+}
+h1 {
+    @extend %titles;
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-bottom: 0;
+}
+
+
+
+
+
