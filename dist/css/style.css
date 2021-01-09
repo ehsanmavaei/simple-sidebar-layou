@@ -36,4 +36,36 @@ li {
 a {
   text-decoration: none;
 }
+
+/**
+contaiber
+**/
+.container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr;
+      grid-template-columns: 1fr 3fr;
+  -ms-grid-rows: 4fr 1fr;
+      grid-template-rows: 4fr 1fr;
+      grid-template-areas: "sidebar main" "sidbar footer";
+  height: 100vh;
+}
+
+aside {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: sidebar;
+}
+
+.main {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: main;
+}
+
+footer {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: footer;
+}
 /*# sourceMappingURL=style.css.map */
