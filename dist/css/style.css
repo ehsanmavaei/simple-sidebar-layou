@@ -39,7 +39,7 @@ a {
 }
 
 /** placeholders **/
-.card, aside li {
+.card, aside li, footer p {
   font-size: .9rem;
   line-height: 1.7em;
 }
@@ -57,14 +57,15 @@ contaiber
   display: grid;
   -ms-grid-columns: 1fr 3fr;
       grid-template-columns: 1fr 3fr;
-  -ms-grid-rows: 4fr 1fr;
-      grid-template-rows: 4fr 1fr;
-      grid-template-areas: "sidebar main" "sidbar footer";
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "sidebar main" "sidebar footer";
   height: 100vh;
 }
 
 aside {
   -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: sidebar;
 }
@@ -124,5 +125,10 @@ aside a {
 
 aside h3 {
   font-size: 1.3rem;
+}
+
+/**footer section**/
+footer {
+  padding: 0 3em;
 }
 /*# sourceMappingURL=style.css.map */
