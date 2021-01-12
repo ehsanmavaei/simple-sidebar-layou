@@ -8,62 +8,29 @@
     margin-top: 0;
     text-transform: uppercase;
 }
-/**
-contaiber
-**/
-.container{
-    display: grid;
-    grid-template-columns: 300px 3fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "sidebar main"
-    "sidebar footer";
-    height: 100vh;
-}
-aside{
-    grid-area: sidebar;
-}
-.main{
-    grid-area: main;
-}
-footer{
-    grid-area: footer;
-}
-
-/**  main section**/
- .main{
-    padding: $layout-padding * 2.5;
-    & > p{
-        font-size: 1.5em;
-        margin: 0;
-        margin-bottom: 1.5em;
-    }
-}
-
-
-
-.card {
-    @extend %text;
-    padding: 2em;
-    margin-right: .5em;
-    box-shadow: 10px 10px 20px rgba(0,0,0,.05);
-}
-h1 {
-    @extend %titles;
-    font-size: 2.5rem;
-    color: $primary-color;
-    margin-bottom: 0;
-}
-
-
-/**
-sidebar section**/
 
 
 
 
 
-aside {
+
+
+
+/**sidebar section**/
+aside {transition: left $transtitionDuration ease;
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    
+    
+   
+
     padding: $layout-padding;
     
     background: $darken-primary;
@@ -86,13 +53,129 @@ aside {
     }
 
 }
+
+/** container**/
+.container{transition: padding $transtitionDuration ease;
+   padding-left: 300px;
+    display: grid;
+    grid-template-columns: 4fr;
+    grid-template-rows:  1fr;
+    grid-template-areas: 
+    "main "
+    "footer";
+    height: 100vh;
+}
+
+
+
+/**  main section**/
+ .main{
+    grid-area: main;
+    padding: $layout-padding * 2.5;
+    & > p{
+        font-size: 1.5em;
+        margin: 0;
+        margin-bottom: 1.5em;
+    }
+    .card {
+        @extend %text;
+        padding: 2em;
+        margin-right: .5em;
+        box-shadow: 10px 10px 20px rgba(0,0,0,.05);
+      
+    }
+    h1 {
+        @extend %titles;
+        font-size: 2.5rem;
+        color: $primary-color;
+        margin-bottom: 0;
+    }
+    
+}
+
 /**footer section**/
 
-
 footer {
-    padding: 0 $layout-padding;
-
+    grid-area: footer;
+padding: $layout-padding;
     p {
         @extend %text;
     }
+}
+ 
+/** burger menu**/
+#burger{
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.4 ease;
+    position: absolute;
+    top: 10px ;
+    left: 310px;
+    z-index: 30;;
+}
+.burger{
+    left: 20px !important;
+   
+}
+
+.active{
+    padding-left: 0;
+}
+.active-aside{
+   
+    left:-600px
+}
+
+
+.bar1{
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+.bar2{
+    opacity: 0;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color:$primary-color;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+   
+    transform: rotate(0deg) translate(0px, 0px);
+    
+  }
+  
+  .change .bar2 {
+   opacity: 1;
+  }
+  
+  .change .bar3 {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+
+@media(max-width:760px){
+ 
+
+    .card-container{
+        flex-direction: column;
+        
+    }
+}
+@media(max-width:960px){
+ 
+    .main{
+        padding: 70px;
+    }
+    .card-container{
+        flex-direction: column;
+        
+    }
+  
 }
