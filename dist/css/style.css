@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
 /** padding**/
+/**colors**/
+/**delay value**/
 img {
   width: 100%;
 }
@@ -189,15 +191,6 @@ footer {
 .change .bar3 {
   -webkit-transform: rotate(0deg) translate(0px, 0px);
           transform: rotate(0deg) translate(0px, 0px);
-}
-
-@media (max-width: 760px) {
-  .card-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
 }
 
 @media (max-width: 960px) {
